@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ui.meeting.fragment.fragment_create_meeting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_normal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:id="@+id/fragment_create_meeting">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linear_theme"
+                android:layout_marginTop="@dimen/margin_moyen">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_normal">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_title_meeting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Thème de la réunion" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_moyen">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_room"
+                    android:text="@string/salle"
+                    style="@style/ThemeTitle"/>
+
+                <Spinner
+                    android:id="@+id/select_room"
+                    android:layout_width="@dimen/spinner"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    style="@style/Spinner"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linear_date2"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_moyen">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:layout_margin="@dimen/margin_normal"
+                    >
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_title"
+                        android:hint="Date"
+                        android:editable="false"
+                        tools:ignore="Deprecated" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/text_input_hour"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:layout_margin="@dimen/margin_normal">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/hour_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="heure"
+                        android:textSize="@dimen/text_title"
+                        android:editable="false"
+                        tools:ignore="Deprecated" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/button_calendar"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="16"
+                    android:background="@drawable/ic_date_range_blue_24dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_moyen">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/title_mail_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/edit_title_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_normal"
+                        android:hint="@string/marc_pierre" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_create_meeting"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_margin="@dimen/margin_moyen"
+                android:background="@drawable/ic_border"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/padding_normal"
+                android:text="@string/cr_er_la_r_union"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_title" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/margin_small">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/color_salle"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/reunion2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/text_meeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_normal"
+            android:textSize="@dimen/text_title"
+            app:layout_constraintLeft_toRightOf="@+id/color_salle"
+            app:layout_constraintTop_toTopOf="@+id/color_salle"
+            tools:text="Reunion" />
+
+        <TextView
+            android:id="@+id/date_meeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:textSize="@dimen/text_moyen"
+            app:layout_constraintBottom_toBottomOf="@id/text_meeting"
+            app:layout_constraintLeft_toRightOf="@+id/text_meeting"
+            app:layout_constraintTop_toTopOf="@id/text_meeting"
+            tools:text="17/09/19" />
+
+        <TextView
+            android:id="@+id/hour_meeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:textSize="@dimen/text_moyen"
+            app:layout_constraintBottom_toBottomOf="@id/text_meeting"
+            app:layout_constraintLeft_toRightOf="@+id/date_meeting"
+            app:layout_constraintTop_toTopOf="@id/text_meeting"
+            tools:text="à 14h" />
+
+        <TextView
+            android:id="@+id/text_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_moyen"
+            android:textSize="@dimen/text_moyen"
+            app:layout_constraintLeft_toLeftOf="@+id/text_meeting"
+            app:layout_constraintStart_toStartOf="@+id/text_meeting"
+            app:layout_constraintTop_toBottomOf="@+id/text_meeting"
+            tools:text="marc@lamzone.com" />
+
+        <ImageButton
+            android:id="@+id/icon_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_moyen"
+            android:background="@null"
+            android:src="@drawable/ic_delete_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
