@@ -142,14 +142,13 @@
             <Button
                 android:id="@+id/button_create_meeting"
                 android:layout_width="match_parent"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_moyen"
-                android:background="@drawable/ic_border"
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="@dimen/padding_normal"
                 android:text="@string/cr_er_la_r_union"
-                android:textColor="#fff"
+                android:textColor="@color/colorBlack"
                 android:textSize="@dimen/text_title" />
 
         </LinearLayout>

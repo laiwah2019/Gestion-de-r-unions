@@ -1,6 +1,6 @@
 package com.project4.mareu.model;
 
-import java.util.Random;
+import java.util.List;
 
 /**
  * Model object representing a Meeting
@@ -25,17 +25,22 @@ public class Meeting {
     /**
      * Date
      */
-    private Integer date;
+    private String date;
 
     /**
      * StartTime
      */
-    private Integer startTime;
+    private String startTime;
 
     /**
      * EndTime
      */
-    private Integer endTime;
+    private String endTime;
+
+    /**
+     *  PersonParticipant
+     */
+    private List<Participants> personParticipant;
 
     /**
      * Constructor
@@ -44,17 +49,20 @@ public class Meeting {
      * @param idRoom
      * @param nameOrganiser
      * @param date
+     * @param personParticipant
      * @Param startTime
      * @Param endTime
      */
-    public Meeting(String title, Integer idRoom, String nameOrganiser, Integer date, Integer startTime, Integer endTime) {
+    public Meeting(String title, Integer idRoom, String nameOrganiser, String date, String startTime, String endTime, List<Participants> personParticipant) {
         this.title = title;
         this.idRoom = idRoom;
         this.nameOrganiser = nameOrganiser;
-        this.date = date;
+        this.date= date;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.personParticipant = personParticipant;
     }
+
 
     public String getTitle() {
         return title;
@@ -80,29 +88,35 @@ public class Meeting {
         this.nameOrganiser = nameOrganiser;
     }
 
-    public Integer getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Integer date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Integer getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public Integer getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
+    public List<Participants> getPersonParticipant() {
+        return personParticipant;
+    }
 
+    public void setPersonParticipant(List<Participants> personParticipant) {
+        this.personParticipant = personParticipant;
+    }
 }

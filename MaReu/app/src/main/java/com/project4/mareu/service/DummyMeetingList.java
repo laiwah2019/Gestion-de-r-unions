@@ -23,38 +23,30 @@ public abstract class DummyMeetingList {
             new Room(8, "Salle 9", 4, "3ème étage"),
             new Room(9, "Salle 10", 12, "3ème étage")
     );
+
     //Generate Meeting
+
     public static List<Meeting> DUMMY_MEETING = Arrays.asList(
 
-            new Meeting("Meeting 1", 1, " Francis", 04 / 04 / 2020, 1400, 1500),
-            new Meeting("Meeting 2", 2, "Alexandra", 06 / 04 / 2020, 1435, 1520),
-            new Meeting("Meeting 3", 4, "Bran", 04 / 04 / 2020, 1500, 1600)
-    );
+            new Meeting("Meeting 1", 1, "Maxime","04/04/2020","14h00","15h00", DUMMY_PARTICIPANTS),
+            new Meeting("Meeting 2", 2, "Paul", "06 / 04 / 2020", "16h00", "17h00", DUMMY_PARTICIPANTS),
+            new Meeting("Meeting 3", 4, "Amandine", "04 / 04 / 2020", "19h00", "20h00", DUMMY_PARTICIPANTS));
+
 
     //Generate Participants
-    public static List<Participants> Dummy_PARTICIPANTS = Arrays.asList(
+    public static List<Participants> DUMMY_PARTICIPANTS = Arrays.asList(
 
-            new Participants(0, "Francis", "francis@lamzone.com"),
-            new Participants(1, "Alexandra", "alexandra@lamzone.com"),
-            new Participants(2, "Bran", "bran@lamzone.com")
+            new Participants(0, "Maxime", "maximes@lamzone.com"),
+            new Participants(1, "Paul", "paul@lamzone.com"),
+            new Participants(2, "Amandine", "amandine@lamzone.com")
     );
 
 
-    static List<Room> generateRoom() {
-        return new ArrayList<>(DUMMY_ROOM);
 
-    }
     static List<Meeting> generateMeeting() {
         return new ArrayList<>(DUMMY_MEETING);
 
     }
-    static List<Participants> generateParticipants() {
-        return new ArrayList<>(Dummy_PARTICIPANTS);
 
-    }
-
-    public static List<Meeting> NEW_MEETING = Arrays.asList(
-            new Meeting("Meeting 1", 1, " Francis", 05 / 04 / 2020, 1600, 1630)
-    );
 
 }
