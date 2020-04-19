@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.project4.mareu.R;
 import com.project4.mareu.service.ReunionListService;
 import com.project4.mareu.ui.activity.ReunionListActivity;
@@ -38,8 +37,8 @@ public class ReunionListAdapter extends RecyclerView.Adapter<ReunionListAdapter.
         public TextView mTextReu;
         @BindView(R.id.hour_reunion)
         public TextView mHour;
-        @BindView(R.id.location)
-        public TextView mLocation;
+        @BindView(R.id.room_name)
+        public TextView mRoomName;
         @BindView(R.id.text_mail)
         public TextView mTextMail;
         @BindView(R.id.icon_delete)
@@ -68,10 +67,10 @@ public class ReunionListAdapter extends RecyclerView.Adapter<ReunionListAdapter.
                 .into(viewHolder.mColorSalle);*/
 
         viewHolder.mTextReu.setText(reunion.getReunionObject());
-        if (reunion.getDate() == null){
+        if (reunion.getNameRoom() == null){
             return;
         }else{
-            viewHolder.mLocation.setText(reunion.getDate());
+            viewHolder.mRoomName.setText(reunion.getNameRoom());
         }
         viewHolder.mHour.setText(reunion.getTime());
 

@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_normal"
-            android:textSize="@dimen/text_moyen"
+            android:textSize="@dimen/text_title"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/text_reu"
             app:layout_constraintLeft_toRightOf="@+id/text_reu"
@@ -47,11 +47,11 @@
             tools:text="14h00 -" />
 
         <TextView
-            android:id="@+id/location"
+            android:id="@+id/room_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_normal"
-            android:textSize="@dimen/text_moyen"
+            android:textSize="@dimen/text_title"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/text_reu"
             app:layout_constraintLeft_toRightOf="@+id/hour_reunion"

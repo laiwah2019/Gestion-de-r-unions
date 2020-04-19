@@ -72,7 +72,7 @@ public class CreationReunionFragment extends Fragment {
         if (context instanceof CreationReunionFragment.CreateReunionListener){
             mCreateReunionListener = (CreationReunionFragment.CreateReunionListener) context;
         }else {
-            throw new RuntimeException(context.toString() + " doit implémenter l'interface");
+            throw new RuntimeException(context.toString() + " Doit implémenter l'interface");
         }
     }
 
@@ -194,7 +194,7 @@ public class CreationReunionFragment extends Fragment {
         }
        return new Reunion(
                 reunionTitle.getText().toString(),
-                mRoomItemSpinner.getRoomId(),
+                mRoomItemSpinner.getRoomImage(),
                 mRoomItemSpinner.getRoomName(),
                 mTextDate.getText().toString(),
                 hourText.getText().toString(),

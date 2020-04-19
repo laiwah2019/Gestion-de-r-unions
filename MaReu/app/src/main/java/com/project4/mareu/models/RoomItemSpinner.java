@@ -6,20 +6,22 @@ import android.support.annotation.NonNull;
 public class RoomItemSpinner {
 
     private String roomName;
-    private Integer roomId;
+    private int roomImage;
 
     public RoomItemSpinner(int roomImage, String roomName) {
         this.roomName = roomName;
-        this.roomId = roomId;
+        this.roomImage = roomImage;
     }
 
     public String getRoomName() {
         return roomName;
     }
 
-    public Integer getRoomId() {
-        return roomId;
+    public int getRoomImage() {
+        return roomImage;
     }
+
+
 
     @NonNull
     @Override
