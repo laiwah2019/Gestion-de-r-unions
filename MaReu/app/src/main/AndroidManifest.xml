@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.project4.mareu">
 
     <application
@@ -10,13 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/MaReuTheme">
 
-
-        <activity android:name=".ui.meeting.MeetingListActivity">
+        <activity android:name="com.project4.mareu.ui.activity.ReunionListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name="com.project4.mareu.ui.fragments.CreationReunionFragment"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/MaReuTheme.create"
+            android:parentActivityName="com.project4.mareu.ui.activity.ReunionListActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project4.mareu.ui.activity.ReunionListActivity"/>
+
         </activity>
 
     </application>

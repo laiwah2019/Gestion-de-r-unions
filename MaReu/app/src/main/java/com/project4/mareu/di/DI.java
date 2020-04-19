@@ -1,28 +1,29 @@
 package com.project4.mareu.di;
 
-import com.project4.mareu.service.DummyMeetingApiService;
-import com.project4.mareu.service.MeetingApiService;
+import com.project4.mareu.service.DummyMeetingApiServices;
+import com.project4.mareu.service.ReunionApi;
+import com.project4.mareu.service.ReunionListService;
 
 /**
- * Dependency injector to get instance of services
- */
+        * Dependency injector to get instance of services
+        */
 public class DI {
 
-    private static MeetingApiService service = new DummyMeetingApiService();
+    private static ReunionApi service = new DummyMeetingApiServices();
 
     /**
-     * Get an instance on @{@link MeetingApiService}
+     * Get an instance on @{@link ReunionListService}
      * @return
      */
-    public static MeetingApiService getMeetingApiService() {
+    public static ReunionApi getReunionApi() {
         return service;
     }
 
     /**
-     * Get always a new instance on @{@link MeetingApiService}. Useful for tests, so we ensure the context is clean.
+     * Get always a new instance on @{@link ReunionApi}. Useful for tests, so we ensure the context is clean.
      * @return
      */
-    public static MeetingApiService getNewInstanceApiService() {
-        return new DummyMeetingApiService();
+    public static ReunionApi getNewInstanceApiService() {
+        return new DummyMeetingApiServices();
     }
 }

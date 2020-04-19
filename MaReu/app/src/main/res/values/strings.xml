@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ma Réu</string>
+    <string name="app_name">Ma réu</string>
     <string name="theme_de_la_reunion">Thème de la réunion :</string>
     <string name="choisissez_votre_date">Date et heure de la réunion</string>
     <string name="entrez_le_nom_des_participants">Prénom des participants séparés par une virgule :</string>
@@ -12,4 +12,5 @@
     <string name="filtrer">Filtrer</string>
     <string name="no_filter">Liste des réunions</string>
     <string name="salle">Salle : </string>
+    <string name="delete">Delete</string>
 </resources>
