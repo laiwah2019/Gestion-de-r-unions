@@ -14,8 +14,10 @@ import static org.junit.Assert.assertEquals;
 public class ReunionListServiceTest {
 
     //Field interface
+    private ReunionListService mReunionListService = new ReunionListService();
     private DummyMeetingApiServices mDummyMeetingApiServices = new DummyMeetingApiServices();
     List<Reunion> mReunionList = mDummyMeetingApiServices.getReunionList();
+
 
     @Test
     public void getReunionList() {
@@ -38,14 +40,14 @@ public class ReunionListServiceTest {
 
     @Test
     public void filterWithSuccess() {
-        String text = "Luigi";
-        Reunion reunionD = new Reunion("Reunion_D", 0,"Luigi",
-                "04/9/2019","16:00","amandine@lamzone.com,luc@lamzone.com");
-        DummyMeetingApiServices.addReunion(reunionD);
+            String text = "Peach";
+            Reunion r4 = new Reunion("Reunion_A", 0,"Peach",
+                    "20/04/2020","16:00","amandine@lamzone.com,luc@lamzone.com");
+            mDummyMeetingApiServices.addReunion(r4);
 
-        ArrayList<Reunion> reunionSorted = mDummyMeetingApiServices.filter(text);
+            ArrayList<Reunion> reunionSorted = mDummyMeetingApiServices.filter(text);
 
-        assertEquals(2, reunionSorted.size());
+            assertEquals(2, reunionSorted.size());
+        }
     }
 
-}

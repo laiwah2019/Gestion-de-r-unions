@@ -7,10 +7,10 @@
 
     <View
         android:id="@+id/image_room"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
         android:background="@drawable/corner_radius"
         android:padding="20dp" />
 

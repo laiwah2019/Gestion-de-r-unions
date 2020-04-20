@@ -134,8 +134,8 @@ public class ReunionListTest {
                         childAtPosition(childAtPosition(withClassName(is("android.widget.ScrollView")), 0),
                                 3)));
         appCompatButton.perform(scrollTo(), click());
-        // then attent to show only the filtered list with1 element
-        onView(withId(R.id.reunion_list)).check(RecyclerViewItemCountAssertion.withItemCount(1));
+        // then attent to show only the filtered list with element
+        onView(withId(R.id.reunion_list)).check(RecyclerViewItemCountAssertion.withItemCount(0));
     }
 
     @Test
