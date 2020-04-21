@@ -1,6 +1,7 @@
 package com.project4.mareu.ui.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -58,26 +59,27 @@ public class ReunionListAdapter extends RecyclerView.Adapter<ReunionListAdapter.
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_reunion, parent, false);
         context = view.getContext();
-
         return new ViewHolder(view);
-
-
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         Reunion reunion = mReunionList.get(position);
 
-        viewHolder.mColorSalle.setBackgroundColor(ContextCompat.getColor(context, Utils.map.get(reunion.getIdRoom())));
+        viewHolder.mColorSalle.setBackgroundResource(R.drawable.corner_radius);
+
+        GradientDrawable drawable = (GradientDrawable) viewHolder.mColorSalle.getBackground();
+
+        drawable.setColor(ContextCompat.getColor(context, Utils.map.get(reunion.getIdRoom())));
 
 
         viewHolder.mTextReu.setText(reunion.getReunionObject());
         if (reunion.getNameRoom() == null){
             return;
         }else{
-            viewHolder.mRoomName.setText("- "+reunion.getNameRoom());
+            viewHolder.mRoomName.setText("- "+ reunion.getNameRoom());
         }
-        viewHolder.mHour.setText("- "+reunion.getTime());
+        viewHolder.mHour.setText("- "+ reunion.getTime());
 
         if (reunion.getMail() != null){
             if (reunion.getMail().length() < 30){

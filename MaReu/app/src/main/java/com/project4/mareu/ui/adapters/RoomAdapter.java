@@ -1,8 +1,10 @@
 package com.project4.mareu.ui.adapters;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +14,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import com.project4.mareu.R;
+import com.project4.mareu.models.Reunion;
 import com.project4.mareu.models.RoomItemSpinner;
+import com.project4.mareu.utils.Utils;
 
 
 public class RoomAdapter extends ArrayAdapter<RoomItemSpinner> {
-
+    Context context;
+    private Reunion reunion;
     public RoomAdapter(@NonNull Context context, ArrayList<RoomItemSpinner> arrayList) {
         super(context, 0, arrayList);
     }
@@ -37,7 +42,6 @@ public class RoomAdapter extends ArrayAdapter<RoomItemSpinner> {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.room_spinner_row, parent, false);
         }
-
         TextView textView = convertView.findViewById(R.id.name_room);
 
         RoomItemSpinner currentItem = getItem(position);

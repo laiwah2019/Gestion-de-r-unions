@@ -74,7 +74,7 @@ public abstract class Utils {
     public static String checkHourNull(String hour){
         if (hour == null){
             Date date1 = new Date();
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH h mm", Locale.FRENCH);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.FRENCH);
             hour = simpleDateFormat.format(date1);
             return hour;
         }else {
@@ -103,7 +103,7 @@ public abstract class Utils {
         String[] arrayString = mail.toLowerCase().split("[,;.:!§/$@?&#|]+");
 
         for (String a : arrayString){
-            a += "@lamzone.com;";
+            a += "@lamzone.com, ";
             str += a;
         }
         return str;
@@ -122,4 +122,5 @@ public abstract class Utils {
         put(8, R.color.colorMeetingRoomI);
         put(9, R.color.colorMeetingRoomJ);
     }};
+
 }

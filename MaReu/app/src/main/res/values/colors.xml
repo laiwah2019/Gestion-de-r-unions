@@ -7,7 +7,7 @@
     <color name="colorCornerRadius">#ffccbc</color>
 
     //colorImage
-    <color name="colorMeetingRoomA">#D71412</color>
+    <color name="colorMeetingRoomA">#ffccbc</color>
     <color name="colorMeetingRoomB">#D75412</color>
     <color name="colorMeetingRoomC">#D7B612</color>
     <color name="colorMeetingRoomD">#71D712</color>
@@ -17,5 +17,4 @@
     <color name="colorMeetingRoomH">#2C12D7</color>
     <color name="colorMeetingRoomI">#7C12D7</color>
     <color name="colorMeetingRoomJ">#D712C5</color>
-
 </resources>
