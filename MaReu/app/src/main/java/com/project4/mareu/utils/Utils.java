@@ -4,14 +4,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.project4.mareu.R;
 import com.project4.mareu.ui.adapters.RoomAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 
 import com.project4.mareu.models.Reunion;
@@ -71,7 +74,7 @@ public abstract class Utils {
     public static String checkHourNull(String hour){
         if (hour == null){
             Date date1 = new Date();
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.FRENCH);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH h mm", Locale.FRENCH);
             hour = simpleDateFormat.format(date1);
             return hour;
         }else {
@@ -100,9 +103,23 @@ public abstract class Utils {
         String[] arrayString = mail.toLowerCase().split("[,;.:!§/$@?&#|]+");
 
         for (String a : arrayString){
-            a += "@lamzone.com, ";
+            a += "@lamzone.com;";
             str += a;
         }
         return str;
     }
+
+    public static Map<Integer, Integer> map = new HashMap<Integer, Integer>()
+    {{
+        put(0, R.color.colorMeetingRoomA);
+        put(1, R.color.colorMeetingRoomB);
+        put(2, R.color.colorMeetingRoomC);
+        put(3, R.color.colorMeetingRoomD);
+        put(4, R.color.colorMeetingRoomE);
+        put(5, R.color.colorMeetingRoomF);
+        put(6, R.color.colorMeetingRoomG);
+        put(7, R.color.colorMeetingRoomH);
+        put(8, R.color.colorMeetingRoomI);
+        put(9, R.color.colorMeetingRoomJ);
+    }};
 }

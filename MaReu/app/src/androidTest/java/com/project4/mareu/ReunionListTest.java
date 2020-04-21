@@ -162,7 +162,7 @@ public class ReunionListTest {
                 isDisplayed()));
 
         appCompatSpinner.perform(click());
-        //Click on the first position in the spinner list (28/09/19)
+        //Click on the first position in the spinner list (04/04/20)
         onData(anything()).inRoot(RootMatchers.isPlatformPopup()).atPosition(0).perform(click());
         //Create a ViewInteraction to click on the button to accept the filter choice
         ViewInteraction appCompatButton = onView(allOf(withId(android.R.id.button1), withText("Filtrer"),

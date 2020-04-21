@@ -1,5 +1,7 @@
 package com.project4.mareu.ui.adapters;
 
+import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,14 +19,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import com.project4.mareu.models.Reunion;
-
+import com.project4.mareu.utils.Utils;
 
 
 public class ReunionListAdapter extends RecyclerView.Adapter<ReunionListAdapter.ViewHolder> {
 
     ReunionListService mReunionListService;
     List<Reunion> mReunionList;
-
+    Context context;
     public ReunionListAdapter(List<Reunion> reunionList) {
         mReunionList = reunionList;
     }
@@ -55,24 +57,27 @@ public class ReunionListAdapter extends RecyclerView.Adapter<ReunionListAdapter.
     public ViewHolder onCreateViewHolder(ViewGroup parent, int position) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_reunion, parent, false);
+        context = view.getContext();
+
         return new ViewHolder(view);
+
+
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         Reunion reunion = mReunionList.get(position);
 
-        /*Glide.with(viewHolder.mColorSalle.getContext())
-                .load(reunion.getIdRoom())
-                .into(viewHolder.mColorSalle);*/
+        viewHolder.mColorSalle.setBackgroundColor(ContextCompat.getColor(context, Utils.map.get(reunion.getIdRoom())));
+
 
         viewHolder.mTextReu.setText(reunion.getReunionObject());
         if (reunion.getNameRoom() == null){
             return;
         }else{
-            viewHolder.mRoomName.setText(reunion.getNameRoom());
+            viewHolder.mRoomName.setText("- "+reunion.getNameRoom());
         }
-        viewHolder.mHour.setText(reunion.getTime());
+        viewHolder.mHour.setText("- "+reunion.getTime());
 
         if (reunion.getMail() != null){
             if (reunion.getMail().length() < 30){

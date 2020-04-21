@@ -5,4 +5,17 @@
     <color name="colorAccent">#0069c0</color>
     <color name="colorWhite">#fff</color>
     <color name="colorCornerRadius">#ffccbc</color>
+
+    //colorImage
+    <color name="colorMeetingRoomA">#D71412</color>
+    <color name="colorMeetingRoomB">#D75412</color>
+    <color name="colorMeetingRoomC">#D7B612</color>
+    <color name="colorMeetingRoomD">#71D712</color>
+    <color name="colorMeetingRoomE">#12D770</color>
+    <color name="colorMeetingRoomF">#12B3D7</color>
+    <color name="colorMeetingRoomG">#1257D7</color>
+    <color name="colorMeetingRoomH">#2C12D7</color>
+    <color name="colorMeetingRoomI">#7C12D7</color>
+    <color name="colorMeetingRoomJ">#D712C5</color>
+
 </resources>
