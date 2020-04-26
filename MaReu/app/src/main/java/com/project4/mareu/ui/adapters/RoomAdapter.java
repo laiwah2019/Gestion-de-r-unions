@@ -42,9 +42,17 @@ public class RoomAdapter extends ArrayAdapter<RoomItemSpinner> {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.room_spinner_row, parent, false);
         }
+        RoomItemSpinner currentItem = getItem(position);
+        View mView = convertView.findViewById(R.id.image_room);
+
+        mView.setBackgroundResource(R.drawable.corner_radius);
+
+        GradientDrawable drawable = (GradientDrawable) mView.getBackground();
+
+        drawable.setColor(ContextCompat.getColor(convertView.getContext(), Utils.map.get(currentItem.getRoomImage())));
         TextView textView = convertView.findViewById(R.id.name_room);
 
-        RoomItemSpinner currentItem = getItem(position);
+
 
         if (currentItem != null){
             textView.setText(currentItem.getRoomName());

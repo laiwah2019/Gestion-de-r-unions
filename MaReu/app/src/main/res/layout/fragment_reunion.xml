@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/margin_moyen"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="#e53935"
         android:src="@drawable/baseline_group_add_white_24dp"
         app:layout_anchorGravity="bottom|right" />
 

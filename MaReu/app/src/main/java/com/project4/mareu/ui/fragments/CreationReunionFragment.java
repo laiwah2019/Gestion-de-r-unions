@@ -116,9 +116,7 @@ public class CreationReunionFragment extends Fragment {
         };
 
         mTimeSetListener = (view12, hourOfDay, minute) -> {
-            if (!checkHour(hourOfDay, minute)){
-                Snackbar.make(getView(), "Choisissez une heure entre 9h et 19h", Snackbar.LENGTH_LONG).show();
-            }else {
+
                 String heureString = String.valueOf(hourOfDay);
                 String minuteString = String.valueOf(minute);
                 if (hourOfDay < 10){
@@ -127,9 +125,9 @@ public class CreationReunionFragment extends Fragment {
                 if (minute < 10){
                     minuteString = "0" + minute;
                 }
-                hour= heureString + ":" + minuteString;
+                hour= heureString + "h" + minuteString;
                 hourText.setText(hour);
-            }
+
         };
 
         mButtonCreateReunion.setOnClickListener(v -> {
