@@ -84,7 +84,6 @@ public class CreationReunionFragment extends Fragment {
 
         ButterKnife.bind(this,view);
 
-        Utils.initRoomSpinner(view, spinnerRoom);
         spinnerRoom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -99,35 +98,14 @@ public class CreationReunionFragment extends Fragment {
             CreationReunionFragment.this.configureDialogCalendar();
         });
 
-        mTextDate.setText(checkDate(date));
-        hourText.setText(checkHourNull(hour));
+        Utils.initRoomSpinner(view, spinnerRoom);
 
         mDateSetListener = (view1, year, month, dayOfMonth) -> {
-            String day = String.valueOf(dayOfMonth);
-            String monthS = String.valueOf(month+1);
-            if (dayOfMonth < 10){
-                day = "0" + dayOfMonth;
-            }
-            if (month < 9){
-                monthS = "0" + (month+1);
-            }
-            date = day + "/" + monthS + "/" + year;
-            mTextDate.setText(date);
+            getDate (year, month, dayOfMonth);
         };
 
         mTimeSetListener = (view12, hourOfDay, minute) -> {
-
-                String heureString = String.valueOf(hourOfDay);
-                String minuteString = String.valueOf(minute);
-                if (hourOfDay < 10){
-                    heureString = "0" + hourOfDay;
-                }
-                if (minute < 10){
-                    minuteString = "0" + minute;
-                }
-                hour= heureString + "h" + minuteString;
-                hourText.setText(hour);
-
+            getTime(hourOfDay,minute);
         };
 
         mButtonCreateReunion.setOnClickListener(v -> {
@@ -149,6 +127,33 @@ public class CreationReunionFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void getTime(String hourOfDay, String minute) {
+        String heureString = String.valueOf(hourOfDay);
+        String minuteString = String.valueOf(minute);
+        if (hourOfDay < 10){
+            heureString = "0" + hourOfDay;
+        }
+        if (minute < 10){
+            minuteString = "0" + minute;
+        }
+        hour= heureString + "h" + minuteString;
+        hourText.setText(hour);
+
+    }
+    private void getDate(String year, String month, String dayOfMonth) {
+
+        String day = String.valueOf(dayOfMonth);
+        String monthS = String.valueOf(month+1);
+        if (dayOfMonth < 10){
+            day = "0" + dayOfMonth;
+        }
+        if (month < 9){
+            monthS = "0" + (month+1);
+        }
+        date = day + "/" + monthS + "/" + year;
+        mTextDate.setText(date);
     }
 
     @Override
