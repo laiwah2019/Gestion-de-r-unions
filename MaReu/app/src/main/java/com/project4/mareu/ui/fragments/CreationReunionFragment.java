@@ -129,7 +129,7 @@ public class CreationReunionFragment extends Fragment {
         return view;
     }
 
-    private void getTime(String hourOfDay, String minute) {
+    private void getTime(int hourOfDay, int minute) {
         String heureString = String.valueOf(hourOfDay);
         String minuteString = String.valueOf(minute);
         if (hourOfDay < 10){
@@ -142,7 +142,7 @@ public class CreationReunionFragment extends Fragment {
         hourText.setText(hour);
 
     }
-    private void getDate(String year, String month, String dayOfMonth) {
+    private void getDate(int year, int month, int dayOfMonth) {
 
         String day = String.valueOf(dayOfMonth);
         String monthS = String.valueOf(month+1);
