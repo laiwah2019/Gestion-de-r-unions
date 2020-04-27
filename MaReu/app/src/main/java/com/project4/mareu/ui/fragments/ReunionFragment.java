@@ -79,7 +79,7 @@ public class ReunionFragment extends Fragment {
         mFloatingActionButton = view.findViewById((R.id.fab_add_reu));
 
         //hide the FAB on tablette
-        if (getResources().getConfiguration().screenWidthDp > 600 &&
+        if (getResources().getConfiguration().screenWidthDp > 960 &&
                 getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             mFloatingActionButton.setVisibility(View.GONE);
         }
