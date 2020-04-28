@@ -26,9 +26,6 @@ import com.project4.mareu.models.Reunion;
 import com.project4.mareu.models.RoomItemSpinner;
 import com.project4.mareu.utils.Utils;
 
-import static com.project4.mareu.utils.Utils.checkDate;
-import static com.project4.mareu.utils.Utils.checkHour;
-import static com.project4.mareu.utils.Utils.checkHourNull;
 import static com.project4.mareu.utils.Utils.checkInputText;
 import static com.project4.mareu.utils.Utils.checkRoomAndDate;
 import static com.project4.mareu.utils.Utils.makeMailString;
@@ -109,24 +106,29 @@ public class CreationReunionFragment extends Fragment {
         };
 
         mButtonCreateReunion.setOnClickListener(v -> {
-            if (!checkInputText(reunionTitle) ||
-                    !checkInputText(editMail) ){
-                Snackbar.make(getView(), "Vous devez écrire le sujet et le nom.", Snackbar.LENGTH_SHORT).show();
+            getButton(mButton);
 
-            }else if(!checkRoomAndDate(mRoomItemSpinner.getRoomName(),
-                    mTextDate.getText().toString(),
-                    hourText.getText().toString(),
-                    ReunionListActivity.mDummyMeetingApiServices.getReunionList())){
-                Snackbar.make(this.getView(),
-                        "Sélectionnez une nouvelle date pour la réunion dans la salle " + mRoomItemSpinner.getRoomName(),
-                        Snackbar.LENGTH_LONG).show();
-            }else{
-                Reunion reunion = createReunion();
-                mCreateReunionListener.onCreateReunion(reunion);
-            }
-        });
+                 });
 
         return view;
+    }
+
+    private void getButton(Button mButton) {
+        if (!checkInputText(reunionTitle) ||
+                !checkInputText(editMail) ){
+            Snackbar.make(getView(), "Vous devez écrire le sujet et le nom.", Snackbar.LENGTH_SHORT).show();
+
+        }else if(!checkRoomAndDate(mRoomItemSpinner.getRoomName(),
+                mTextDate.getText().toString(),
+                hourText.getText().toString(),
+                ReunionListActivity.mDummyMeetingApiServices.getReunionList())){
+            Snackbar.make(this.getView(),
+                    "Sélectionnez une nouvelle date pour la réunion dans la salle " + mRoomItemSpinner.getRoomName(),
+                    Snackbar.LENGTH_LONG).show();
+        }else{
+            Reunion reunion = createReunion();
+            mCreateReunionListener.onCreateReunion(reunion);
+        }
     }
 
     private void getTime(int hourOfDay, int minute) {
