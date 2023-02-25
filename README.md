@@ -1,7 +1,7 @@
 # Ma réu
 
 ## Description:
-Mar éu, application de gestion de réunions, par Lamzone
+Gestion de réunions
 
 ### fonctionnalités:
 
